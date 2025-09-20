@@ -1,209 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portafolio · Sandra Ximena De Fex Sierra</title>
-  <meta name="description" content="Portafolio de proyectos GIS, ciencia de datos y mapeo participativo.">
+  <meta name="description" content="Portafolio de proyectos GIS, data science y mapeo participativo.">
   <meta property="og:title" content="Portafolio · Sandra Ximena De Fex Sierra">
-  <meta property="og:description" content="Proyectos de GIS, datos abiertos y mapeo participativo en América Latina.">
+  <meta property="og:description" content="GIS · Data Science · Ingeniería · Mapeo participativo">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/cover.png">
-  <link rel="icon" href="assets/img/favicon.svg">
+  <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin></script>
-  <script defer src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#contenido">Sandra Ximena De Fex Sierra</a>
-      <nav aria-label="Principal">
-        <ul class="menu">
-          <li><a href="#about">Perfil</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#workshops">Talleres</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </nav>
+  <a class="skip-link" href="#contenidos">Saltar al contenido</a>
+
+  <!-- FRANJA FIJA SUPERIOR -->
+  <header class="topbar" role="banner">
+    <div class="topbar__inner">
+      <div class="brand" id="brand">
+        <img class="brand__avatar" src="assets/img/avatar.jpg" alt="Avatar de Sandra Ximena De Fex Sierra">
+        <div class="brand__text">
+          <span class="brand__name">Sandra Ximena De Fex Sierra</span>
+          <span class="brand__titles">GIS · Data Science · Ingeniería</span>
+        </div>
+      </div>
+      <div class="topbar__media">
+        <img src="assets/img/hero-strip.jpg" alt="Imagen temática ciencia y territorio" />
+      </div>
     </div>
   </header>
-    <section class="hero" id="contenido" role="region" aria-label="Presentación">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">GIS · Data Science · Mapeo participativo</p>
-        <h1>Integro datos abiertos, comunidades y territorio.</h1>
-        <p>Ingeniera física y máster en geoinformación. Diseño flujos ETL, análisis espacial y formación en OSM/QGIS para gobiernos locales y organizaciones comunitarias.</p>
-        <div class="cta">
-          <a class="btn" href="#projects">Ver proyectos</a>
-          <a class="btn btn-outline" href="CV_SandraDeFex.pdf">Descargar CV</a>
-        </div>
-      </div>
-      <div class="hero-map">
-        <div id="map" aria-label="Mapa de proyectos recientes"></div>
-      </div>
+
+  <!-- FRANJA FLOTANTE AL HOVER DEL NOMBRE -->
+  <aside class="hover-panel" id="hoverPanel" aria-live="polite">
+    <div class="hover-panel__inner">
+      <p>
+        Ingeniera física y máster en geoinformación. Diseño e implemento flujos de datos (ETL), análisis espacial y
+        geoaplicaciones. Trabajo con administraciones, ONGs y empresas para llevar datos a decisiones, combinando
+        cartografía, ciencia de datos y participación comunitaria.
+      </p>
+      <ul class="tags" aria-label="Tecnologías">
+        <li>QGIS</li><li>PostGIS</li><li>Python</li><li>GeoPandas</li><li>FME</li><li>Leaflet</li><li>RAG/LLM</li><li>Streamlit</li>
+      </ul>
     </div>
-  </section>
-    <main>
-    <section id="about" class="section">
-      <div class="container section-inner">
-        <div class="section-header">
-          <h2>Perfil</h2>
-          <p class="section-lead">Coordino proyectos de cartografía social y datos abiertos con equipos interdisciplinarios, siempre con enfoque de impacto territorial.</p>
-        </div>
-        <ul class="chips" aria-label="Tecnologías clave">
-          <li>QGIS</li>
-          <li>PostGIS</li>
-          <li>Python</li>
-          <li>GeoPandas</li>
-          <li>FME</li>
-          <li>Leaflet</li>
-          <li>iD/JOSM</li>
-          <li>HOT TM</li>
-          <li>ODK/Kobo</li>
-        </ul>
-      </div>
-    </section>
-        <section id="projects" class="section section-projects">
-      <div class="container section-inner">
-        <div class="section-header">
-          <h2>Proyectos destacados</h2>
-          <p class="section-lead">Explora visores, tableros y herramientas reproducibles para gestión territorial y energética.</p>
-        </div>
-        <div class="project-list">
-          <article class="project-card">
-            <div class="project-media">
-              <div class="embed embed--16x9">
-                <iframe src="https://usuario.github.io/proyecto1" loading="lazy" title="Geoaplicación participativa de Yopal"></iframe>
-              </div>
-            </div>
-            <div class="project-content">
-              <header class="project-heading">
-                <p class="project-tag">Participación ciudadana</p>
-                <h3>Geoaplicación participativa · Yopal</h3>
-              </header>
-              <p>Formulario Kobo/ODK, integración con OSM, visor Leaflet y tablero de seguimiento para alcaldía y veedurías ciudadanas.</p>
-              <ul class="project-meta">
-                <li>Stack: Kobo · PostGIS · Leaflet</li>
-                <li>Rol: Coordinación, modelado de datos y UX</li>
-              </ul>
-              <div class="project-links">
-                <a class="btn btn-sm" href="https://github.com/usuario/proyecto1" target="_blank" rel="noopener">Repositorio</a>
-                <a class="btn btn-sm btn-outline" href="https://usuario.github.io/proyecto1" target="_blank" rel="noopener">Abrir visor</a>
-              </div>
-            </div>
-          </article>
+  </aside>
 
-          <article class="project-card">
-            <div class="project-media">
-              <div class="carousel" data-autoplay="7000">
-                <figure class="carousel-slide is-active">
-                  <img src="assets/img/proj-fv-1.svg" alt="Mapa de aptitud solar a nivel nacional">
-                  <figcaption>Modelo multicriterio y síntesis departamental.</figcaption>
-                </figure>
-                <figure class="carousel-slide">
-                  <img src="assets/img/proj-fv-2.svg" alt="Escala municipal para priorización de proyectos">
-                  <figcaption>Priorización municipal con capas ambientales y sociales.</figcaption>
-                </figure>
-                <figure class="carousel-slide">
-                  <img src="assets/img/proj-fv-3.svg" alt="Tablero de seguimiento en Power BI">
-                  <figcaption>Tablero de seguimiento con indicadores accionables.</figcaption>
-                </figure>
-                <button type="button" class="carousel-control prev" data-carousel="prev" aria-label="Imagen anterior">‹</button>
-                <button type="button" class="carousel-control next" data-carousel="next" aria-label="Imagen siguiente">›</button>
-                <div class="carousel-dots" role="tablist" aria-label="Diapositivas del proyecto"></div>
-              </div>
-            </div>
-            <div class="project-content">
-              <header class="project-heading">
-                <p class="project-tag">Planeación energética</p>
-                <h3>Plantas fotovoltaicas · Colombia</h3>
-              </header>
-              <p>Índices multicriterio y mapas de aptitud con PostGIS/QGIS; reporte técnico y recomendaciones para entidades regulatorias.</p>
-              <ul class="project-meta">
-                <li>Stack: PostGIS · QGIS · Power BI</li>
-                <li>Rol: Modelación espacial y transferencia de capacidades</li>
-              </ul>
-              <div class="project-links">
-                <a class="btn btn-sm" href="https://github.com/usuario/proyecto2" target="_blank" rel="noopener">Repositorio</a>
-                <a class="btn btn-sm btn-outline" href="https://nbviewer.org/github/usuario/proyecto2/notebooks/analisis.ipynb" target="_blank" rel="noopener">Notebook</a>
-              </div>
-            </div>
-          </article>
+  <main id="contenidos" class="wrap" role="main">
+    <!-- GRID DE PROYECTOS EN MOSAICO -->
+    <section id="projects" class="section">
+      <h2 class="section__title">Proyectos</h2>
 
-          <article class="project-card">
-            <div class="project-media">
-              <div class="embed embed--16x9">
-                <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Demo chatbot geoespacial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="masonry" aria-label="Proyectos destacados">
+        <!-- 1) Embed GitHub Page -->
+        <article class="tile tile--wide" aria-label="Geoaplicación participativa · Yopal">
+          <div class="tile__content">
+            <iframe
+              src="https://sxfexs.github.io/ProyectoYopal/"
+              title="Demo: Geoaplicación participativa · Yopal"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            ></iframe>
+          </div>
+          <div class="tile__overlay">Geoaplicación participativa · Yopal</div>
+        </article>
+
+        <!-- 2) Embed GitHub Page -->
+        <article class="tile tile--tall" aria-label="Mapa de aptitud FV · Colombia">
+          <div class="tile__content">
+            <iframe
+              src="https://sxfexs.github.io/MapaAptitudFV/"
+              title="Demo: Mapa de aptitud FV · Colombia"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="tile__overlay">Aptitud FV · Colombia</div>
+        </article>
+
+        <!-- 3) Embed GitHub Page -->
+        <article class="tile" aria-label="Chatbot Geo · AMB">
+          <div class="tile__content">
+            <iframe
+              src="https://sxfexs.github.io/ChatbotGeoAMB/"
+              title="Demo: Chatbot Geo · AMB"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="tile__overlay">Chatbot Geo · AMB</div>
+        </article>
+
+        <!-- 4) Carrusel de imágenes clicables -->
+        <article class="tile tile--wide" aria-label="Galería de proyectos">
+          <div class="tile__content">
+            <div class="carousel" data-autoplay="true" data-interval="4000" id="galeria1" role="region" aria-roledescription="carrusel" aria-label="Galería">
+              <div class="carousel__track">
+                <a class="carousel__slide" href="https://example.com/proyecto-osm" target="_blank" rel="noopener">
+                  <img src="assets/img/galeria/osm.png" alt="Mapa OSM validación comunitaria">
+                </a>
+                <a class="carousel__slide" href="https://example.com/proyecto-qgis" target="_blank" rel="noopener">
+                  <img src="assets/img/galeria/qgis.png" alt="QGIS análisis multicriterio">
+                </a>
+                <a class="carousel__slide" href="https://example.com/proyecto-bess" target="_blank" rel="noopener">
+                  <img src="assets/img/galeria/bess.png" alt="Análisis para BESS e infraestructura crítica">
+                </a>
               </div>
+              <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+              <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
             </div>
-            <div class="project-content">
-              <header class="project-heading">
-                <p class="project-tag">IA + GIS</p>
-                <h3>Chatbot geoespacial · AMB</h3>
-              </header>
-              <p>Arquitectura RAG para consulta de capas, generación NL→SQL y mapas dinámicos. Capacitación a equipos técnicos y documentación reutilizable.</p>
-              <ul class="project-meta">
-                <li>Stack: Azure OpenAI · PostGIS · Leaflet</li>
-                <li>Rol: Diseño de arquitectura, prompt engineering y QA</li>
-              </ul>
-              <div class="project-links">
-                <a class="btn btn-sm" href="https://github.com/usuario/proyecto3" target="_blank" rel="noopener">Repositorio</a>
-                <a class="btn btn-sm btn-outline" href="https://usuario.github.io/proyecto3" target="_blank" rel="noopener">Demo web</a>
-              </div>
-            </div>
-          </article>
-        </div>
+          </div>
+          <div class="tile__overlay">Galería de proyectos</div>
+        </article>
+
+        <!-- 5) Vídeo -->
+        <article class="tile" aria-label="Video demo">
+          <div class="tile__content tile__content--video">
+            <!-- YouTube embed de ejemplo; cambia el ID -->
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Video de presentación de proyecto"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="tile__overlay">Video · Presentación</div>
+        </article>
+
+        <!-- 6) Link a Streamlit -->
+        <article class="tile tile--tall" aria-label="Dashboard en Streamlit">
+          <a class="tile__link" href="https://tu-app-streamlit.streamlit.app/" target="_blank" rel="noopener" title="Abrir dashboard en Streamlit">
+            <div class="tile__content tile__content--cover" style="background-image:url('assets/img/streamlit-cover.png')"></div>
+            <div class="tile__overlay">Dashboard · Streamlit</div>
+          </a>
+        </article>
+
+        <!-- 7) Imagen + texto (otro proyecto) -->
+        <article class="tile" aria-label="Informe técnico · Energía">
+          <a class="tile__link" href="https://github.com/sxfexs/InformeEnergia" target="_blank" rel="noopener">
+            <div class="tile__content tile__content--cover" style="background-image:url('assets/img/proj-report.png')"></div>
+            <div class="tile__overlay">Informe técnico · Energía</div>
+          </a>
+        </article>
       </div>
     </section>
 
+    <!-- TALLERES Y COMUNIDAD -->
     <section id="workshops" class="section">
-      <div class="container section-inner">
-        <div class="section-header">
-          <h2>Talleres y comunidad</h2>
-        </div>
-        <ul class="timeline">
-          <li>
-            <span class="when">2025</span>
-            <div class="what">
-              <h3>Programa mujeres en datos &amp; GIS</h3>
-              <p>Módulos de OSM/QGIS y mapeo para servicios públicos y ambiente. Diseño de materiales y evaluación.</p>
-            </div>
-          </li>
-          <li>
-            <span class="when">2024</span>
-            <div class="what">
-              <h3>Validación OSM con JOSM</h3>
-              <p>Buenas prácticas, topología, HOT TM y herramientas para control de calidad.</p>
-            </div>
-          </li>
-        </ul>
+      <h2 class="section__title">Talleres y comunidad</h2>
+      <div class="chips chips--scroll" role="list">
+        <figure class="chip" role="listitem">
+          <img src="assets/img/talleres/osm-validacion.jpg" alt="Validación OSM con JOSM" />
+          <figcaption>
+            <h3>Validación OSM con JOSM</h3>
+            <p>Topología, HOT TM y QA práctico.</p>
+          </figcaption>
+        </figure>
+        <figure class="chip" role="listitem">
+          <img src="assets/img/talleres/qgis-basico.jpg" alt="QGIS básico aplicado" />
+          <figcaption>
+            <h3>QGIS básico aplicado</h3>
+            <p>ETL ligera y cartografía.</p>
+          </figcaption>
+        </figure>
+        <figure class="chip" role="listitem">
+          <img src="assets/img/talleres/etls.jpg" alt="ETL geoespacial" />
+          <figcaption>
+            <h3>ETL geoespacial</h3>
+            <p>FME, Python y PostGIS.</p>
+          </figcaption>
+        </figure>
+        <figure class="chip" role="listitem">
+          <img src="assets/img/talleres/mapeo-comunitario.jpg" alt="Mapeo comunitario" />
+          <figcaption>
+            <h3>Mapeo comunitario</h3>
+            <p>Diseño participativo y OSM.</p>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
+    <!-- CONTACTO -->
     <section id="contact" class="section">
-      <div class="container section-inner">
-        <div class="section-header">
-          <h2>Contacto</h2>
-          <p class="section-lead">¿Colaboramos? Escríbeme.</p>
-        </div>
-        <ul class="links">
-          <li><a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></li>
-          <li><a href="https://www.linkedin.com/in/usuario" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/usuario" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </div>
+      <h2 class="section__title">Contacto</h2>
+      <ul class="links">
+        <li><a href="mailto:sandra.defex@gmail.com">sandra.defex@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/sandraximenadefex" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/sxfexs" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="current-year"></span> Sandra Ximena De Fex Sierra · Datos abiertos y cartografía para el bien común.</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <p>© <span id="y"></span> Sandra Ximena De Fex Sierra · Datos abiertos y cartografía para el bien común.</p>
     </div>
   </footer>
 </body>
